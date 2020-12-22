@@ -1,3 +1,13 @@
 <h1>Whiskys index</h1>
 <h2> Hello whiskys</h2>
 <p>Find me in app/views/whiskys/index.html.erb</p>
+
+<h1>whiskys</h1>
+
+<ul>
+  <% @whiskys.each do |whisky| %>
+    <li>
+      <%= whisky.title %>
+    </li>
+  <% end %>
+</ul>
