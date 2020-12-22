@@ -1,13 +1,11 @@
-<h1>Whiskys index</h1>
-<h2> Hello whiskys</h2>
-<p>Find me in app/views/whiskys/index.html.erb</p>
-
 <h1>whiskys</h1>
 
 <ul>
   <% @whiskys.each do |whisky| %>
     <li>
-      <%= whisky.title %>
+      <a href="<%= whiskys_path(whisky) %>">
+        <%= whisky.title %>
+      </a>
     </li>
   <% end %>
 </ul>
