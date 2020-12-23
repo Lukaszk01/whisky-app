@@ -5,4 +5,17 @@ class WhiskysController < ApplicationController
   def show
     @whiskys = Whisky.find(params[:id])
   end
+  def new
+    @whisky = Whisky.new
+  end
+
+  def create
+    @whisky = Whisky.new(title: "...", body: "...")
+
+    if @whisky.save
+      redirect_to @whisky
+    else
+      render :new
+    end
+  end
 end
