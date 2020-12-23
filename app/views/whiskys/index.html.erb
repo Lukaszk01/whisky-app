@@ -3,6 +3,15 @@
 <ul>
   <% @whiskys.each do |whisky| %>
     <li>
+      <a href="/whiskys/<%= whisky.id %>">
+        <%= whisky.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+<ul>
+  <% @whiskys.each do |whisky| %>
+    <li>
       <a href="<%= whiskys_path(whisky) %>">
         <%= whisky.title %>
       </a>
