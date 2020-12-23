@@ -10,12 +10,16 @@ class WhiskysController < ApplicationController
   end
 
   def create
-    @whisky = Whisky.new(title: "...", body: "...")
+    @whisky = Whisky.new(whisky_params)
 
     if @whisky.save
       redirect_to @whisky
     else
       render :new
     end
+  end
+  private
+  def whisky_params
+    params.require(:whisky).permit(:title, :body)
   end
 end

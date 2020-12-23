@@ -5,7 +5,17 @@
 <ul>
   <% @whiskys.each do |whisky| %>
     <li>
-      <%= link_to whisky.title, whiskys_path(@whiskys) %>
+      <%= link_to whisky.title, whisky_path(whisky) %>
     </li>
   <% end %>
 </ul>
+
+<ul>
+  <% @whiskys.each do |whisky| %>
+    <li>
+      <%= link_to whisky.title, @whisky%>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New whisky", new_whisky_path %>

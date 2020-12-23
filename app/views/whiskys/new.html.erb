@@ -1,0 +1,57 @@
+<h1>New Whisky</h1>
+
+<%= form_with model: @whiskys do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<form action="/whiskys" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="...">
+
+  <div>
+    <label for="whisky_title">Title</label><br>
+    <input type="text" name="whisky[title]" id="whisky_title">
+  </div>
+
+  <div>
+    <label for="whisky_body">Body</label><br>
+    <textarea name="whisky[body]" id="whisky_body"></textarea>
+  </div>
+
+  <div>
+    <input type="submit" name="commit" value="Create Whisky" data-disable-with="Create Whisky">
+  </div>
+</form>
+
+<%= form_with model: @whiskys do |form| %>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+      <%= @whisky.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %><br>
+      <%= @whisky.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
