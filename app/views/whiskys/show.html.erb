@@ -1,25 +1,12 @@
-<h1><%= @whisky.title %></h1>
+<h1><%= @whiskys.title %></h1>
 
-<p><%= @whisky.body %></p>
+<p><%= @whiskys.body %></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_whisky_path(@whisky) %></li>
-  <li><%= link_to "Destroy", whisky_path(@whisky),
+  <li><%= link_to "Edit", edit_whisky_path(@whiskys) %></li>
+  <li><%= link_to "Destroy", whisky_path(@whiskys),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
 
-<h2>Add a comment:</h2>
-<%= form_with model: [ @whisky, @whisky.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+# 
