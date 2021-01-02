@@ -4,6 +4,12 @@ class CommentsController < ApplicationController
         @comment = @whisky.comments.create(comment_params)
         redirect_to whisky_path(@whisky)
       end
+    def destroy
+      @whisky = Whisky.find(params[:whisky_id])
+      @comment = @whisky.comments.find(params[:id])
+      @comment.destroy
+      redirect_to whisky_path(@whisky)
+    end  
     
       private
         def comment_params
