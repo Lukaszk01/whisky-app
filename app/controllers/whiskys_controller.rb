@@ -30,4 +30,18 @@ class WhiskysController < ApplicationController
   def whisky_params
     params.require(:whisky).permit(:title, :body)
   end
+  
+# class whisky_api
+#   BASE_URL = 
+#   API_PARTIAL_URL = 
+#   def quary
+#     request = HTTParty.get(BASE_URL+@search_format+API_PARTIAL_URL).to_json
+#     @request_hash = JSON.parse(request)
+#   end
+  
+#   def initialize(user_search_imput)
+#     @search_format = ""
+#   end
+# end
+
 end
