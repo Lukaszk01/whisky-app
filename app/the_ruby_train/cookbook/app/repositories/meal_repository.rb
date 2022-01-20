@@ -19,6 +19,13 @@ class MealRepository
         @next_id += 1 
         save_csv
     end
+    
+    def delete(meal)
+        meals.id = @next_id
+        @meals << meal
+        @next_id -= 1 
+        save_csv
+    end
 
     def find(id)
         @meals.find { |meal| meal.id == id}
