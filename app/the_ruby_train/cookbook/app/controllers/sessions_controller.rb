@@ -7,6 +7,6 @@ class SeassionsController
     @Emploees_view = EmploeesView.new
   end
     def login()
-
+        
     end
 end
