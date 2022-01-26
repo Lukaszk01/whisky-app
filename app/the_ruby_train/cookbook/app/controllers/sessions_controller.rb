@@ -1,12 +1,18 @@
-require_relative "../views/Emploees_view"
-require_relative "../models/Emploee"
+require_relative "../views/sessions_view"
 
-class SeassionsController
-  def initialize(Emploee_repository)
-    @Emploee_repository = Emploee_repository
-    @Emploees_view = EmploeesView.new
+class SessionsController
+  def initialize(employee_repository)
+    @sessions_view = SessionsView.new
+    @employee_repository = employee_repository
   end
-    def login()
-        
-    end
+
+  def login
+    username = @sessions_view.ask_for(:username)
+    password = @sessions_view.ask_for(:password)
+    employee = @employee_repository.find_by_username(username)
+    return employee if employee && employee.password == password
+
+    @sessions_view.print_wrong_credentials
+    login
+  end
 end
