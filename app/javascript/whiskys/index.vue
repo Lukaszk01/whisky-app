@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="index">
     <p>{{ message }}</p>
   </div>
 
@@ -10,7 +10,7 @@
 export default {
   data: function () {
     return {
-      message: "Hello from Vue!"
+      message: "Hello from Vue index!"
     }
   }
 }
